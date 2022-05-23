@@ -9,14 +9,12 @@ public class Main {
         System.out.println("\n**************************************\n");
         System.out.println("\tWelcome to TheDesk \n");
         System.out.println("**************************************");
-//        ArrayList<Integer> arrlist = new ArrayList<Integer>();
         ArrayList<Integer> expenses = new ArrayList<Integer>();
         expenses.add(1000);
         expenses.add(2300);
         expenses.add(45000);
         expenses.add(32000);
         expenses.add(110);
-//        expenses.addAll(arrlist);
         optionsSelection(expenses);
     }
     private static void optionsSelection(ArrayList<Integer> expenses) {
@@ -49,7 +47,6 @@ public class Main {
                         int value = sc.nextInt();
                         expenses.add(value);
                         System.out.println("Your value is updated\n");
-                        //expenses.addAll(arrlist);
                         System.out.println(expenses+"\n");
                         optionsSelection(expenses);
 
@@ -92,6 +89,15 @@ public class Main {
         int leng = arrayList.size();
         System.out.println("Enter the expense you need to search:\t");
         //Complete the method
+        Scanner sc = new Scanner(System.in);
+        int search = sc.nextInt();
+        for (int expense: arrayList) {
+        	if (expense == search) {
+        		System.out.println("expense present in arraylist");
+        		return ;
+        	}
+        }
+        System.out.println("Given expense not present in arraylist");
     }
     private static void sortExpenses(ArrayList<Integer> arrayList) {
         int arrlength =  arrayList.size();
